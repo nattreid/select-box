@@ -1,0 +1,22 @@
+{
+    "name": "nattreid/selectbox",
+    "description": "SelectBox for Nette Framework",
+    "license": ["Unlicense"],
+    "authors": [
+        {
+            "name": "Attreid",
+            "email": "attreid@gmail.com"
+        }
+    ],
+    "main": [
+        "./client-side/selectBox.js",
+        "./client-side/selectBox.less"
+    ],
+    "ignore": [
+        "src",
+        "*.json"
+    ],
+    "dependencies": {
+        "jquery": "~1.12"
+    }
+}

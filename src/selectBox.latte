@@ -1,0 +1,9 @@
+<span n:class="selectBox-input, $count == 0 ? disabled">
+    <span class="selectBox-select" data-name="{$column}">
+        <span class="selectBox-text" data-default="{_$name}">{_$name}</span>
+        <ul n:if="$count > 0">
+            <li n:ifset="$first" data-id="" class="irrelevant">({_$first})</li>
+            <li data-id="{ifset $row->id}{$row->id}{else}{$key}{/ifset}" n:foreach="$rows as $key => $row">{ifset $row->name}{$row->name}{else}{$row}{/ifset}</li>
+        </ul>
+    </span>
+</span>
