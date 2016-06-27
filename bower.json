@@ -13,9 +13,7 @@
         "*.json"
     ],
     "dependencies": {
-        "jquery": "~1.12"
-    },
-    "sources": {
-        "jquery": "bower_components/jquery/dist/jquery.min.js"
+        "jquery": "~1.12",
+        "jsUtils": "git@git.newtravel.cz:nattreid/jsutils.git#~1.0"
     }
 }
