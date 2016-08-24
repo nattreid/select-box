@@ -1,6 +1,6 @@
 {
-    "name": "utils",
-    "description": "Utils for Nette Framework",
+    "name": "selectbox",
+    "description": "SelectBox for Nette Framework",
     "main": "gulpfile.js",
     "repository": {
         "type": "git",
