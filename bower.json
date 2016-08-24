@@ -18,6 +18,6 @@
     ],
     "dependencies": {
         "jquery": "~1.12",
-        "jsUtils": "git@git.newtravel.cz:nattreid/jsutils.git#~1.0"
+        "utils": "git@git.newtravel.cz:nattreid/utils.git#~1.0"
     }
 }
