@@ -48,7 +48,7 @@ class SelectBox extends \Nette\Application\UI\Control
 		$this->args['first'] = $first;
 	}
 
-	public function render($args = NULL)
+	public function render($args = null)
 	{
 		$template = $this->template;
 		$template->setFile(__DIR__ . '/selectBox.latte');
@@ -56,7 +56,7 @@ class SelectBox extends \Nette\Application\UI\Control
 		foreach ($this->args as $name => $value) {
 			$template->$name = $value;
 		}
-		if ($args !== NULL) {
+		if ($args !== null) {
 			foreach ($args as $name => $value) {
 				$template->$name = $value;
 			}
