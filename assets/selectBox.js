@@ -40,7 +40,7 @@
                 var html = $(this).find('li[data-id="' + value + '"]').html();
                 var obj = $(this).find('.selectBox-text');
                 obj.html(html);
-                obj.attr('data-id', value);
+                obj.parent().attr('data-id', value);
             }
         });
 
@@ -58,16 +58,17 @@
             }
             toggle(obj.find('ul'));
         });
+
         $(document).on('click', '.selectBox li', function () {
             var sel = $(this).closest('.selectBox');
             $(this).closest('form').find('input[name="' + sel.data('name') + '"]').val($(this).data('id')).change();
             var el = sel.find('.selectBox-text');
             if ($(this).data('id') == '') {
                 el.html(el.data('default'));
-                el.attr('data-id', null);
+                el.parent().attr('data-id', null);
             } else {
                 el.html($(this).html());
-                el.attr('data-id', $(this).data('id'));
+                el.parent().attr('data-id', $(this).data('id'));
             }
         });
     });
