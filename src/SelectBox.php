@@ -33,6 +33,22 @@ class SelectBox extends Control
 	}
 
 	/**
+	 * Nastavi zobrazovani nabidky na slide
+	 */
+	public function setSlideToggle()
+	{
+		$this->template->toggle = 'slide';
+	}
+
+	/**
+	 * Nastavi zobrazovani nabidky na fade
+	 */
+	public function setFadeToggle()
+	{
+		$this->template->toggle = 'fade';
+	}
+
+	/**
 	 * Nastavi sloupec ve formulari
 	 * @param string $column
 	 */
