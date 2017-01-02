@@ -2,21 +2,41 @@
 
 namespace NAttreid\SelectBox;
 
+use InvalidArgumentException;
+use Nette\Application\UI\Control;
+use Nette\Localization\ITranslator;
+
 /**
  * SelectBox
  *
+ * @property-write string $column
+ * @property-write string $name
+ * @property-write array $rows
+ * @property-write string $first
+ *
  * @author Attreid <attreid@gmail.com>
  */
-class SelectBox extends \Nette\Application\UI\Control
+class SelectBox extends Control
 {
+	/** @var ITranslator */
+	private $translator;
 
 	private $args = [];
+
+	/**
+	 * Nastavi translator
+	 * @param ITranslator $translator
+	 */
+	public function setTranslator(ITranslator $translator = null)
+	{
+		$this->translator = $translator;
+	}
 
 	/**
 	 * Nastavi sloupec ve formulari
 	 * @param string $column
 	 */
-	public function setColumn($column)
+	protected function setColumn($column)
 	{
 		$this->args['column'] = $column;
 	}
@@ -25,8 +45,11 @@ class SelectBox extends \Nette\Application\UI\Control
 	 * Nastavi nazev
 	 * @param string $name
 	 */
-	public function setName($name)
+	protected function setName($name)
 	{
+		if ($this->translator !== null) {
+			$name = $this->translator->translate($name);
+		}
 		$this->args['name'] = $name;
 	}
 
@@ -34,7 +57,7 @@ class SelectBox extends \Nette\Application\UI\Control
 	 * Nastavi data do selectu
 	 * @param array $rows
 	 */
-	public function setRows($rows)
+	protected function setRows($rows)
 	{
 		$this->args['rows'] = $rows;
 	}
@@ -43,8 +66,11 @@ class SelectBox extends \Nette\Application\UI\Control
 	 * Nastavi prvni radek
 	 * @param string $first
 	 */
-	public function setFirst($first)
+	protected function setFirst($first)
 	{
+		if ($this->translator !== null) {
+			$first = $this->translator->translate($first);
+		}
 		$this->args['first'] = $first;
 	}
 
@@ -70,7 +96,7 @@ class SelectBox extends \Nette\Application\UI\Control
 		} elseif (is_array($rows)) {
 			$template->count = count($rows);
 		} else {
-			throw new \InvalidArgumentException('Rows neni pocitatelne');
+			throw new InvalidArgumentException('Rows is not countable');
 		}
 
 		$template->render();
