@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace NAttreid\SelectBox;
 
 use InvalidArgumentException;
@@ -52,7 +54,7 @@ class SelectBox extends Control
 	 * Nastavi sloupec ve formulari
 	 * @param string $column
 	 */
-	protected function setColumn($column)
+	protected function setColumn(string $column)
 	{
 		$this->args['column'] = $column;
 	}
@@ -61,7 +63,7 @@ class SelectBox extends Control
 	 * Nastavi nazev
 	 * @param string $name
 	 */
-	protected function setName($name)
+	protected function setName(string $name)
 	{
 		if ($this->translator !== null) {
 			$name = $this->translator->translate($name);
@@ -82,7 +84,7 @@ class SelectBox extends Control
 	 * Nastavi prvni radek
 	 * @param string $first
 	 */
-	protected function setFirst($first)
+	protected function setFirst(string $first)
 	{
 		if ($this->translator !== null) {
 			$first = $this->translator->translate($first);
