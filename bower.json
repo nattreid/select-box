@@ -1,8 +1,8 @@
 {
-  "name": "selectbox",
+  "name": "nattreid-select-box",
   "description": "SelectBox for Nette Framework",
   "license": [
-    "Unlicense"
+    "MIT"
   ],
   "authors": [
     {

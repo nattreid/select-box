@@ -14,7 +14,7 @@ protected function createComponentSelectBox()
 
 protected function createComponentForm()
 {
-    $form = new \NAttreid\Form\Form;
+    $form = new \Nette\Forms\Form;
     $form->addHidden('column', $this->defaultValue);
     // dalsi php kod
     return $form;

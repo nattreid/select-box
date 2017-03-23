@@ -1,13 +1,13 @@
 {
-  "name": "selectbox",
+  "name": "nattreid-select-box",
   "description": "SelectBox for Nette Framework",
   "main": "gulpfile.js",
   "repository": {
     "type": "git",
-    "url": "git@git.newtravel.cz:nattreid/selectbox.git"
+    "url": "git@github.com:nattreid/select-box.git"
   },
   "author": "Attreid",
-  "license": "Unlicense",
+  "license": "MIT",
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-clean-css": "^2.0.12",
