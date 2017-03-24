@@ -20,6 +20,6 @@
   ],
   "dependencies": {
     "jquery": "~1.12",
-    "nattreid-utils": "latest"
+    "nattreid-utils": "~1.0"
   }
 }
