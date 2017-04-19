@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace NAttreid\SelectBox;
 
@@ -29,7 +29,7 @@ class SelectBox extends Control
 	 * Nastavi translator
 	 * @param ITranslator $translator
 	 */
-	public function setTranslator(ITranslator $translator = null)
+	public function setTranslator(?ITranslator $translator)
 	{
 		$this->translator = $translator;
 	}
@@ -37,7 +37,7 @@ class SelectBox extends Control
 	/**
 	 * Nastavi zobrazovani nabidky na slide
 	 */
-	public function setSlideToggle()
+	public function setSlideToggle(): void
 	{
 		$this->template->toggle = 'slide';
 	}
@@ -45,7 +45,7 @@ class SelectBox extends Control
 	/**
 	 * Nastavi zobrazovani nabidky na fade
 	 */
-	public function setFadeToggle()
+	public function setFadeToggle(): void
 	{
 		$this->template->toggle = 'fade';
 	}
@@ -54,7 +54,7 @@ class SelectBox extends Control
 	 * Nastavi sloupec ve formulari
 	 * @param string $column
 	 */
-	protected function setColumn(string $column)
+	protected function setColumn(string $column): void
 	{
 		$this->args['column'] = $column;
 	}
@@ -63,7 +63,7 @@ class SelectBox extends Control
 	 * Nastavi nazev
 	 * @param string $name
 	 */
-	protected function setName(string $name)
+	protected function setName(string $name): void
 	{
 		if ($this->translator !== null) {
 			$name = $this->translator->translate($name);
@@ -75,7 +75,7 @@ class SelectBox extends Control
 	 * Nastavi data do selectu
 	 * @param array $rows
 	 */
-	protected function setRows($rows)
+	protected function setRows($rows): void
 	{
 		$this->args['rows'] = $rows;
 	}
@@ -84,7 +84,7 @@ class SelectBox extends Control
 	 * Nastavi prvni radek
 	 * @param string $first
 	 */
-	protected function setFirst(string $first)
+	protected function setFirst(string $first): void
 	{
 		if ($this->translator !== null) {
 			$first = $this->translator->translate($first);
@@ -92,7 +92,7 @@ class SelectBox extends Control
 		$this->args['first'] = $first;
 	}
 
-	public function render($args = null)
+	public function render(...$args): void
 	{
 		$template = $this->template;
 		$template->setFile(__DIR__ . '/selectBox.latte');
@@ -100,10 +100,8 @@ class SelectBox extends Control
 		foreach ($this->args as $name => $value) {
 			$template->$name = $value;
 		}
-		if ($args !== null) {
-			foreach ($args as $name => $value) {
-				$template->$name = $value;
-			}
+		foreach ($args as $name => $value) {
+			$template->$name = $value;
 		}
 
 		$rows = $template->rows;
