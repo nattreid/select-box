@@ -22,8 +22,8 @@ gulp.task('less', function () {
 });
 
 gulp.task('watch', function () {
-    gulp.watch(path + 'selectBox.js', ['js']);
-    gulp.watch(path + 'selectBox.less', ['less']);
+    gulp.watch(path + 'selectBox.js', gulp.series('js'));
+    gulp.watch(path + 'selectBox.less', gulp.series('less'));
 });
 
-gulp.task('default', ['js', 'less', 'watch']); 
+gulp.task('default', gulp.series('js', 'less', 'watch'));

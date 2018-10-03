@@ -1,18 +1,26 @@
 {
-  "name": "nattreid-select-box",
-  "description": "SelectBox for Nette Framework",
-  "main": "gulpfile.js",
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:nattreid/select-box.git"
-  },
-  "author": "Attreid",
-  "license": "MIT",
-  "devDependencies": {
-    "gulp": "^3.9.1",
-    "gulp-clean-css": "^2.0.12",
-    "gulp-less": "^3.1.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-uglify": "^2.0.0"
-  }
+ "name": "nattreid-select-box",
+ "description": "SelectBox for Nette Framework",
+ "version": "1.5.0",
+ "main": "./assets/selectBox.js",
+ "repository": {
+  "type": "git",
+  "url": "git@github.com:nattreid/select-box.git"
+ },
+ "author": {
+  "name": "Attreid",
+  "email": "attreid@gmail.com"
+ },
+ "license": "MIT",
+ "dependencies": {
+  "jquery": "~3",
+  "nattreid-utils": "~1"
+ },
+ "devDependencies": {
+  "gulp": "~4",
+  "gulp-clean-css": "~3",
+  "gulp-less": "~4",
+  "gulp-rename": "~1",
+  "gulp-uglify": "~3"
+ }
 }
